@@ -1,15 +1,17 @@
 # n-hesitez pas a corriger les erreurs presentes dans cette configuration
 name: Deploy to Ubuntu
 
-on: [push]
+on:
+  push:
+    branches:
+      - prod
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     #--> ATTENTION : NE TOUCHEZ PAS A CE STEP
     - name: Insert commit ID into HTML
